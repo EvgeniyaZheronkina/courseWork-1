@@ -54,12 +54,12 @@ public class EmployeeBook {
     }
 
     public Employee getEmployeeWithMinSalary() {
-        Employee min = employees[0];
+        Employee min = null;
         for (Employee employee : employees) {
             if (employee == null) {
                 continue;
             }
-            if (employee.getSalary() <= min.getSalary()) {
+            if (min == null || employee.getSalary() <= min.getSalary()) {
                 min = employee;
             }
         }
@@ -67,12 +67,12 @@ public class EmployeeBook {
     }
 
     public Employee getEmployeeWithMaxSalary() {
-        Employee max = employees[0];
+        Employee max = null;
         for (Employee employee : employees) {
             if (employee == null) {
                 continue;
             }
-            if (employee.getSalary() >= max.getSalary()) {
+            if (max == null || employee.getSalary() >= max.getSalary()) {
                 max = employee;
             }
         }
